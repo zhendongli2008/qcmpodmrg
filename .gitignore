@@ -1,0 +1,10 @@
+*.pyc
+*.png
+*.molden
+*.lprof
+mole.h5
+mps.h5
+examples/date*
+log
+libs
+ctypes/libqsym.so.dSYM
