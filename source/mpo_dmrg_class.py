@@ -21,7 +21,6 @@
 #
 # def ci(self,ifpt=False):
 # def vpt(self):
-# def detci(self):
 #
 # def final(self): 
 #
@@ -446,15 +445,6 @@ class mpo_dmrg:
       if rank == 0: print '\n[mpo_dmrg_class.vpt] solve Hylleraas functional in a given linear space'
       e2,c1 = mpo_dmrg_util.vpt(self)
       return e2,c1
-
-   # MPS-based CI
-   def detci(self):
-      rank = self.comm.rank
-      if rank == 0: print '\n[mpo_dmrg_class.detci]'
-      self.dumpMPO()
-      from mpsci import mixedci
-      mixedci.main(self)
-      return 0
 
    # The finalization is postponed, since checkMPS or the latter
    # initializations may use fhop/fpop and flmps/frmps.
