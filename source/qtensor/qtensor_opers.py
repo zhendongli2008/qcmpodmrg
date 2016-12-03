@@ -48,10 +48,10 @@ import numpy
 import itertools
 import qtensor
 import qtensor_util
-from mpodmrg.source import mpo_dmrg_opers
-from mpodmrg.source import mpo_dmrg_ptopers
-from mpodmrg.source import mpo_dmrg_qphys
-from mpodmrg.source.tools import parallel_util
+from qcmpodmrg.source import mpo_dmrg_opers
+from qcmpodmrg.source import mpo_dmrg_ptopers
+from qcmpodmrg.source import mpo_dmrg_qphys
+from qcmpodmrg.source.tools import parallel_util
 
 def sortQnums(qnums):
    idx = sorted(range(len(qnums)), key=lambda k: str(qnums[k]))

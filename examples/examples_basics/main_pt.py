@@ -58,7 +58,7 @@ import numpy
 import math
 import h5py
 from mpi4py import MPI
-from mpodmrg.source.itools.molinfo import class_molinfo
+from qcmpodmrg.source.itools.molinfo import class_molinfo
 
 #==================================
 # Main program
@@ -82,8 +82,8 @@ mol.symS2=0.0 #Total Spin
 mol.tmpdir = './'
 mol.build()
 
-from mpodmrg.source import mpo_dmrg_class
-from mpodmrg.source import mpo_dmrg_schedule
+from qcmpodmrg.source import mpo_dmrg_class
+from qcmpodmrg.source import mpo_dmrg_schedule
 
 sval = 0.0
 sz = 0.0

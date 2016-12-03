@@ -22,10 +22,10 @@ import time
 import h5py
 import math
 import numpy
-from mpodmrg.source import mpo_dmrg_opers
-from mpodmrg.source import mpo_dmrg_spinopers
-from mpodmrg.source.qtensor import qtensor_opers
-from mpodmrg.source.qtensor import qtensor_spinopers
+from qcmpodmrg.source import mpo_dmrg_opers
+from qcmpodmrg.source import mpo_dmrg_spinopers
+from qcmpodmrg.source.qtensor import qtensor_opers
+from qcmpodmrg.source.qtensor import qtensor_spinopers
 
 # DUMP Wx[isite] for R(theta)
 # Although W is indepdent of isite, but for consistency

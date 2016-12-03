@@ -22,8 +22,8 @@ import numpy
 import mpo_dmrg_props
 import mpo_dmrg_propsMPO
 import mpo_dmrg_propsMPORpt
-from mpodmrg.source.sysutil_include import dmrg_dtype
-from mpodmrg.source.tools import smalld
+from qcmpodmrg.source.sysutil_include import dmrg_dtype
+from qcmpodmrg.source.tools import smalld
 
 # Effective spin quantum number
 def seff(s2exp):

@@ -4,8 +4,8 @@
 import math
 import numpy
 import h5py
-from mpodmrg.source import mpo_dmrg_class
-from mpodmrg.source.properties import mpo_dmrg_propsItrf
+from qcmpodmrg.source import mpo_dmrg_class
+from qcmpodmrg.source.properties import mpo_dmrg_propsItrf
 
 prefix = 'lmps_data_for_h3_631g/'
 

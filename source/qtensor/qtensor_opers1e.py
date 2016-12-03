@@ -14,8 +14,8 @@ import itertools
 import qtensor
 import qtensor_util
 import qtensor_opers
-from mpodmrg.source import mpo_dmrg_opers1e
-from mpodmrg.source.tools import parallel_util
+from qcmpodmrg.source import mpo_dmrg_opers1e
+from qcmpodmrg.source.tools import parallel_util
 
 # Spin orbital case: nsite = 2*K
 def genWfacQnums(nsite,isite,isz,status='L'):

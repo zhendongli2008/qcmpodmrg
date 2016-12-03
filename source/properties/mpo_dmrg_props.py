@@ -15,12 +15,12 @@ import os
 import time
 import h5py
 import numpy
-from mpodmrg.source import sysutil_io
-from mpodmrg.source import mpo_dmrg_io
-from mpodmrg.source import mpo_dmrg_init
-from mpodmrg.source import mpo_dmrg_initQt
-from mpodmrg.source.qtensor import qtensor
-from mpodmrg.source.sysutil_include import dmrg_dtype,dmrg_mtype
+from qcmpodmrg.source import sysutil_io
+from qcmpodmrg.source import mpo_dmrg_io
+from qcmpodmrg.source import mpo_dmrg_init
+from qcmpodmrg.source import mpo_dmrg_initQt
+from qcmpodmrg.source.qtensor import qtensor
+from qcmpodmrg.source.sysutil_include import dmrg_dtype,dmrg_mtype
 
 #
 # General computation of <bra|O|ket> for NQt/Qt version

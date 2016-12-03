@@ -25,12 +25,12 @@ import time
 import h5py
 import math
 import numpy
-from mpodmrg.source import sysutil_io
-from mpodmrg.source import mpo_dmrg_opers
-from mpodmrg.source import mpo_dmrg_spinopers
-from mpodmrg.source import mpo_dmrg_io
-from mpodmrg.source.qtensor import qtensor_opers
-from mpodmrg.source.qtensor import qtensor_spinopers
+from qcmpodmrg.source import sysutil_io
+from qcmpodmrg.source import mpo_dmrg_opers
+from qcmpodmrg.source import mpo_dmrg_spinopers
+from qcmpodmrg.source import mpo_dmrg_io
+from qcmpodmrg.source.qtensor import qtensor_opers
+from qcmpodmrg.source.qtensor import qtensor_spinopers
 
 # Apq = p[is1]^+*q[is2], where islst = [is1,is2] contains spin cases,
 # for p,q for all spatial sites, thus dump 'MPO' list of nsite**2.

@@ -1,7 +1,7 @@
 import h5py
 from mpi4py import MPI
-from mpodmrg.source.itools.molinfo import class_molinfo
-from mpodmrg.source.qtensor import qtensor_api
+from qcmpodmrg.source.itools.molinfo import class_molinfo
+from qcmpodmrg.source.qtensor import qtensor_api
 
 #==================================
 # Main program
@@ -25,8 +25,8 @@ mol.symS2=0.0 #Total Spin
 mol.tmpdir = './'
 mol.build()
 
-from mpodmrg.source import mpo_dmrg_class
-from mpodmrg.source import mpo_dmrg_schedule
+from qcmpodmrg.source import mpo_dmrg_class
+from qcmpodmrg.source import mpo_dmrg_schedule
 
 sval = 0.0
 sz = 0.0

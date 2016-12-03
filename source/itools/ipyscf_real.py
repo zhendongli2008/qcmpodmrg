@@ -1,7 +1,7 @@
 import h5py
 import numpy
 import scipy.linalg
-from mpodmrg.source.tools import fielder
+from qcmpodmrg.source.tools import fielder
 
 #
 # Provide the basic interface

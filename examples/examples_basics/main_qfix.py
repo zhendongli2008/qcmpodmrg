@@ -1,5 +1,5 @@
 from mpi4py import MPI
-from mpodmrg.source.molinfo import class_molinfo
+from qcmpodmrg.source.molinfo import class_molinfo
 
 #==================================
 # Main program
@@ -23,9 +23,9 @@ mol.symS2=0.0 #Total Spin
 mol.tmpdir = './'
 mol.build()
 
-from mpodmrg.source import mpo_dmrg_class
-from mpodmrg.source import mpo_dmrg_schedule
-from mpodmrg.source.mpsmpo import mps_io
+from qcmpodmrg.source import mpo_dmrg_class
+from qcmpodmrg.source import mpo_dmrg_schedule
+from qcmpodmrg.source.mpsmpo import mps_io
 
 #---------------------------------
 # COPY MPS.h5 to each directory

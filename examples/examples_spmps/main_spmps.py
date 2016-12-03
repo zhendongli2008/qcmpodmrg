@@ -19,9 +19,9 @@ import h5py
 import shutil
 import numpy
 from mpi4py import MPI
-from mpodmrg.source.itools.molinfo import class_molinfo
-from mpodmrg.source import mpo_dmrg_class
-from mpodmrg.source import mpo_dmrg_schedule
+from qcmpodmrg.source.itools.molinfo import class_molinfo
+from qcmpodmrg.source import mpo_dmrg_class
+from qcmpodmrg.source import mpo_dmrg_schedule
 
 #==================================
 # Main program

@@ -347,7 +347,7 @@ mf.analyze()
 #==================================================================
 # Dump integrals
 #==================================================================
-from mpodmrg.source.itools import ipyscf_real
+from qcmpodmrg.source.itools import ipyscf_real
 #mol.spin = 2 - triplet
 iface = ipyscf_real.iface(mol,mf)
 iface.ccsd()

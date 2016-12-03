@@ -4,7 +4,7 @@ import numpy
 import h5py
 import time
 from mpi4py import MPI
-from mpodmrg.source import sysutil_io
+from qcmpodmrg.source import sysutil_io
 
 #
 # SCF & ERI interface

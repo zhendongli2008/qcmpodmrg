@@ -23,8 +23,8 @@ import itertools
 import qtensor
 import qtensor_util
 import qtensor_opers
-from mpodmrg.source import mpo_dmrg_opers
-from mpodmrg.source import mpo_dmrg_spinopers
+from qcmpodmrg.source import mpo_dmrg_opers
+from qcmpodmrg.source import mpo_dmrg_spinopers
 
 def genSpinOpersQnums(nsite,isite,key):
    if key in ['N','Sz','Omega','NaNb']: 

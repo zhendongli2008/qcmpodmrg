@@ -1,6 +1,6 @@
 import numpy
 import qtensor
-from mpodmrg.source import mpo_dmrg_qphys
+from qcmpodmrg.source import mpo_dmrg_qphys
 
 # Cast fmps0 to fmps1[Qt form]
 def fmpsQt(fmps0,fmps1,status,isym=2):

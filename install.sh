@@ -8,4 +8,4 @@ cd ctypes
 gcc -fPIC -shared -g -O2 -o libqsym.so qsym.c
 mv libqsym.so ../libs
 
-echo '* MPODMRG2016 is successfully implemented!'
+echo '* QCMPODMRG is successfully installed!'

@@ -1,4 +1,4 @@
-# An MPO-based DMRG code (2016)
+# An MPO-based DMRG code for quantum chemistry (2016)
 
 Basic ideas:                                        
 

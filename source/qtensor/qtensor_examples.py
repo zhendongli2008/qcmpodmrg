@@ -4,9 +4,9 @@ import numpy
 import qtensor
 import qtensor_util
 import qtensor_opers
-from mpodmrg.source.mpsmpo import mps_io
-from mpodmrg.source import mpo_dmrg_qphys
-from mpodmrg.source import mpo_dmrg_opers
+from qcmpodmrg.source.mpsmpo import mps_io
+from qcmpodmrg.source import mpo_dmrg_qphys
+from qcmpodmrg.source import mpo_dmrg_opers
 
 #@profile
 def test_tensordot():

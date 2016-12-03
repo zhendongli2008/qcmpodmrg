@@ -1,7 +1,7 @@
 import copy
 import numpy
 import ctypes
-from mpodmrg.source.sysutil_include import libqsym 
+from qcmpodmrg.source.sysutil_include import libqsym 
 
 ##############
 # main codes

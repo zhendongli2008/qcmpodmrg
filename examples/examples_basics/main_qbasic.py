@@ -1,9 +1,9 @@
 import h5py
 from mpi4py import MPI
-from mpodmrg.source.itools.molinfo import class_molinfo
-from mpodmrg.source import mpo_dmrg_class
-from mpodmrg.source import mpo_dmrg_schedule
-from mpodmrg.source.qtensor import qtensor_api
+from qcmpodmrg.source.itools.molinfo import class_molinfo
+from qcmpodmrg.source import mpo_dmrg_class
+from qcmpodmrg.source import mpo_dmrg_schedule
+from qcmpodmrg.source.qtensor import qtensor_api
 
 #==================================
 # Main program

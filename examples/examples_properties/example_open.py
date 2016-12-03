@@ -60,7 +60,7 @@ print(mf.scf())
 #==================================================================
 # Dump integrals
 #==================================================================
-from mpodmrg.source.itools import ipyscf_real
+from qcmpodmrg.source.itools import ipyscf_real
 iface = ipyscf_real.iface(mol,mf)
 #iface.fci()
 #iface.fci(nelecs=[8,8])
