@@ -163,25 +163,6 @@ def symmetrySpaceInfo(dmrg,qkey,ncsite,dicDPT=None):
          print 'keys = ',dicDPT.keys()
          exit(1)
       ndim0  = len(prjmap)
-     
-#>    For testing purpose - 2016.10.21 - precursor for tamps     
-#>      #------------------------
-#>      ndim0 = dmrg.dims[-1]
-#>      prjmap = range(ndim0)
-#>      #print 'dicDPT=',[(key,len(dicDPT[key])) for key in dicDPT]
-#>    
-#>      print
-#>      prjmap = []
-#>      nk = eval(qkey)[0]
-#>      for ky in dicDPT:
-#>	 nd = eval(ky)[0]
-#>	 if abs(nk-nd)<1.e-8:
-#>	    prjmap += list(dicDPT[ky])
-#>	    print ' key=',ky,len(dicDPT[ky])
-#>      ndim0 = len(prjmap)
-#>      print
-#>      #------------------------
-
    if ndim0 == 0:
       print 'error: No enough basis in the symmetry sector !'
       print ' qkey =',qkey
