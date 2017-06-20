@@ -4,7 +4,7 @@ import math
 import h5py
 import shutil
 from mpi4py import MPI
-from zmpo_dmrg.source.itools.molinfo import class_molinfo
+from qcmpodmrg.source.itools.molinfo import class_molinfo
 
 try: 
   shutil.rmtree('./cal0')
@@ -26,8 +26,8 @@ if size > 0 and rank ==0: print '\n[MPI init]'
 comm.Barrier()
 print ' Rank= %s of %s processes'%(rank,size)
 
-from zmpo_dmrg.source import mpo_dmrg_class
-from zmpo_dmrg.source import mpo_dmrg_schedule
+from qcmpodmrg.source import mpo_dmrg_class
+from qcmpodmrg.source import mpo_dmrg_schedule
 
 t = 1
 u = 0.1

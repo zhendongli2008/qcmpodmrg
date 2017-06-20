@@ -1,12 +1,12 @@
 import numpy
 import h5py
 import copy
-from zmpo_dmrg.source import mpo_dmrg_io
-from zmpo_dmrg.source import mpo_dmrg_opers
-from zmpo_dmrg.source import mpo_dmrg_model
-from zmpo_dmrg.source.mpsmpo import mps_class
-from zmpo_dmrg.source.mpsmpo import mpo_class
-from zmpo_dmrg.source.mpsmpo.tools import mpslib
+from qcmpodmrg.source import mpo_dmrg_io
+from qcmpodmrg.source import mpo_dmrg_opers
+from qcmpodmrg.source import mpo_dmrg_model
+from qcmpodmrg.source.mpsmpo import mps_class
+from qcmpodmrg.source.mpsmpo import mpo_class
+from qcmpodmrg.source.mpsmpo.tools import mpslib
 import tevol
 import os
 import shutil
