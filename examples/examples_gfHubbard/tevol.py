@@ -1,6 +1,6 @@
 import numpy
 import copy
-from zmpo_dmrg.source.mpsmpo import mpo_class
+from qcmpodmrg.source.mpsmpo import mpo_class
 
 #
 # Approximation to exp(H*x)
