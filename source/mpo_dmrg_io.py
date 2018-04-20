@@ -28,6 +28,7 @@ import time
 import numpy
 import mpo_dmrg_opers
 import mpo_dmrg_ptopers
+from misc import mpo_dmrg_model
 from qtensor import qtensor
 from qtensor import qtensor_opers
 from sysutil_include import dmrg_dtype,dmrg_mtype 
@@ -293,6 +294,32 @@ def dumpMPO_H0(dmrg,debug=False):
    print ' time for dumpMPO[dop] = %.2f s'%(t1-t0),' rank =',rank
    return 0
 
+def dumpMPO_Hubbard(dmrg,debug=False):
+   rank = dmrg.comm.rank
+   t0 = time.time()
+   dmrg.fhop = h5py.File(dmrg.path+'/hop','w')
+   dmrg.fhop['nsite'] = dmrg.nsite
+   dmrg.fhop['nops'] = dmrg.nops
+   dmrg.fhop['wts'] = dmrg.hpwts
+   for isite in range(dmrg.nsite):
+      ti = time.time()
+      gname = 'site'+str(isite)
+      grp = dmrg.fhop.create_group(gname)
+      for iop in range(dmrg.nops):
+	 cop = mpo_dmrg_model.genHubbardSpatial(dmrg,isite) 
+         if not dmrg.ifQt:
+            grp['op'+str(iop)] = cop
+         else:
+	    #cop.dump(grp,'op'+str(iop))
+            print 'Not implemented yet!'
+	    exit()
+         if debug: print ' isite/iop =',isite,iop,' pindx =',pindx
+      tf = time.time()
+      if rank == 0: print ' isite =',isite,' time = %.2f s'%(tf-ti) 
+   t1 = time.time()
+   print ' time for dumpMPO[Hubbard] = %.2f s'%(t1-t0),' rank =',dmrg.comm.rank
+   return 0
+
 # DUMP Wx[isite] for H
 def dumpMPO_H1e(dmrg,debug=False):
    rank = dmrg.comm.rank
@@ -345,10 +372,16 @@ def finalMPS(dmrg):
 def finalMPO(dmrg):
    rank = dmrg.comm.rank
    print ' close fhop ...'
-   dmrg.fhop.close()  
+   try:
+      dmrg.fhop.close() 
+   except AttributeError or ValueError:
+      pass 
    if rank == 0 and dmrg.ifs2proj: 
       print ' close fpop ...'
-      dmrg.fpop.close()
+      try:
+         dmrg.fpop.close()
+      except AttributeError or ValueError:
+         pass 
    return 0
 
 # Load H1e and ERIs
