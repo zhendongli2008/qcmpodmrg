@@ -92,6 +92,12 @@ def sweep(dmrg,sitelst,ncsite,status,ifsym=False):
    #>    dmrg.frmps['nsite'] = dmrg.nsite
    #>    mpo_dmrg_io.saveQnum(dmrg.frmps,dmrg.nsite,dmrg.qnumr[-1])
 
+   # Save the L-MPS for analysis
+   if status == 'L' and dmrg.isweep != None and dmrg.comm.rank==0:
+      dmrg.flmps.close()
+      shutil.copy(dmrg.path+'/lmps','./lmps_isweep'+str(dmrg.isweep))
+      dmrg.flmps = h5py.File(dmrg.path+'/lmps','r+')
+
    return nmvp,indx,eav,dwt,elst,dlst
  
 # Solver
