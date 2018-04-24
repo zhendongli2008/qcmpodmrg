@@ -337,13 +337,13 @@ def dumpMPO_H1e(dmrg,debug=False):
          for iop in range(dmrg.nops):
             pindx = dmrg.opers[iop]
             cop = mpo_dmrg_opers1e.genHRfacSpatial(pindx,dmrg.sbas,isite,dmrg.h1e,\
-              		       		           dmrg.qpts,dmrg.model_u)
+              		       		           dmrg.qpts,dmrg.model_Usite[isite])
             grp['op'+str(iop)] = cop
       else:
          for iop in range(dmrg.nops):
             pindx = dmrg.opers[iop]
             cop = qtensor_opers1e.genHRfacSpatialQt(pindx,dmrg.sbas,isite,dmrg.h1e,\
-              		         	            dmrg.qpts,dmrg.maxslc,dmrg.model_u)
+              		         	            dmrg.qpts,dmrg.maxslc,dmrg.model_Usite[isite])
             cop.dump(grp,'op'+str(iop))
       tf = time.time()
       if rank == 0: print ' isite =',isite,' time = %.2f s'%(tf-ti) 

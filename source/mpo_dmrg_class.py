@@ -187,6 +187,7 @@ class mpo_dmrg:
       #------------------------------------------------------
       self.model_t = 1 
       self.model_u = 0
+      self.model_Usite = None
       self.h1e     = None # general hopping matrix
       #------------------------------------------------------
 
