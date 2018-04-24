@@ -26,8 +26,8 @@ mol.comm=comm
 
 # Tempory file will be put to this dir
 mol.tmpdir = './' 
-#mol.tmpdir = os.environ['SCRATCH']
-print 'tmpdir=',mol.tmpdir
+mol.tmpdir = os.environ['SCRATCH']
+#print 'tmpdir=',mol.tmpdir
 mol.build()
 
 import thubbard
@@ -101,18 +101,18 @@ else:
    dmrg2.comm = mol.comm
    dmrg2.qsectors = {state_key:1}
    
-   np = 1
+   np = 2
    sc2 = mpo_dmrg_schedule.schedule()
-   sc2.MaxMs  = [1]*np + [400]*np + [800]*np + [1200]*np 
+   sc2.MaxMs  = [1]*np + [500]*np + [1000]*np + [1500]*np + [2000]*(2*np)
       #        + [1600]*np + [2000]*np + [2400]*np + [2800]*np \
       #        + [3200]*np + [3600]*np + [4000]*np + [4400]*np \
       #        + [4800]*np + [5200]*np + [5600]*np + [6000]*np
    ns = len(sc2.MaxMs)
    sc2.Sweeps = range(ns)
-   sc2.Tols   = [1.e-2]*(2*np) + [1.e-3]*(2*np) 
+   sc2.Tols   = [1.e-4]*(2*np) + [1.e-6]*(2*np) + [1.e-8]*(2*np) 
 	      #+ [1.e-4]*(2*np) + [1.e-5]*(2*np) \
               #+ [1.e-6]*(8*np)
-   sc2.Noises = [1.e-4]*(2*np) + [1.e-5]*(2*np) 
+   sc2.Noises = [1.e-4]*(2*np) + [1.e-5]*(2*np) + [0.0]*(2*np) 
 	      #+ [1.e-6]*(2*np) + [1.e-7]*(2*np) \
               #+ [0.e-0]*(8*np)
    sc2.coff = 0
@@ -133,8 +133,8 @@ else:
    dmrg2.h1e = tmatrix
    dmrg2.model_Usite = us
    dmrg2.dumpMPO_Model("HubbardGeneral")
-   dmrg2.fhop.close()
-   exit()
+   #debug: dmrg2.fhop.close()
+   #debug: exit()
    #====================================
    dmrg2.default(sc2,flmps1)
    # New L-MPS
