@@ -23,11 +23,14 @@ print ' Rank= %s of %s processes'%(rank,size)
 
 mol=class_molinfo()
 mol.comm=comm
-fname = "mole.h5"
-mol.loadHam(fname)
+#fname = "mole.h5"
+#mol.loadHam(fname)
 # Tempory file will be put to this dir
 mol.tmpdir = './'
 mol.build()
+
+# Specific for Hubbard Model
+mol.sbas = 16*2
 
 ##################
 # Global settings
@@ -44,18 +47,31 @@ dmrg.isym = 1
 dmrg.build()
 dmrg.comm = mol.comm
 dmrg.qsectors = {str([mol.nelec]):1} 
-#---------------------------
-if ifs2proj:
-   dmrg.ifs2proj = True
-   dmrg.npts = 3
-   dmrg.s2quad(sval,sz)
-#---------------------------
+####---------------------------
+###if ifs2proj:
+###   dmrg.ifs2proj = True
+###   dmrg.npts = 3
+###   dmrg.s2quad(sval,sz)
+####---------------------------
 dmrg.partition()
-dmrg.loadInts(mol)
-mol.build()
+#dmrg.loadInts(mol)
+#mol.build()
 dmrg.path = mol.path
 dmrg.ifQt = ifQt
-dmrg.dumpMPO()
+
+#====================================
+# Generate MPO
+#====================================
+import thubbard
+t = 1.0
+u = 2.
+n = 4
+nsite,tmatrix = thubbard.t2d(n,t)
+us = numpy.ones(nsite)*u
+dmrg.h1e = tmatrix
+dmrg.model_Usite = us
+dmrg.dumpMPO_Model("HubbardGeneral")
+#====================================
 
 ###########
 # Example #
@@ -63,14 +79,24 @@ dmrg.dumpMPO()
 #prefix = 'lmps_data_for_h3_631g/'
 #fnames = ['lmps_NQt_NProj','lmps_NQt_Proj','lmps_Qt_NProj','lmps_Qt_Proj']
 #fname = prefix + fnames[2]
-fname = './lmps'
+fname = './lmpsQs1'
 flmps = h5py.File(fname,'r')
+
+#==========================
+# Compute energy component
+#==========================
 dmrg.checkMPS(flmps,ifep=True)
+print
+print len(dmrg.ecomp)
 print dmrg.ecomp
 
+#==========================================================
+# Compute RDMs:
+# For more general RDMs: 
+# see generation of mpo for mpo_dmrg_propsMPO.py line 129.
+#==========================================================
 from qcmpodmrg.source.properties import mpo_dmrg_propsMPO
 from qcmpodmrg.source.properties import mpo_dmrg_props
-
 nsite = dmrg.nsite
 rdm1 = numpy.zeros((nsite,nsite,2))
 for p in range(nsite):
