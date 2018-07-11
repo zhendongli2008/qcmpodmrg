@@ -1,5 +1,4 @@
-# QC-MPO-DMRG: 
-# An MPO-based DMRG code for Quantum Chemistry (2016)
+# QC-MPO-DMRG: an MPO-based DMRG code for Quantum Chemistry (2016)
 
 ## Basic ideas:                                        
 
