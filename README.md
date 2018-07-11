@@ -1,12 +1,12 @@
 # An MPO-based DMRG code for Quantum Chemistry (2016)
 
-Basic ideas:                                        
+# Basic ideas:                                        
 
  1. The central quantity is the three indexed operators in MPO format.
 
  2. Parallelization is achieved at the operator level.
 
-Supports:
+## Supports:
  
  1. Ab inito DMRG with/without particle number and Sz symmetry
 
@@ -14,7 +14,7 @@ Supports:
 
  3. Other functionalities: model Hamiltonians via MPO & quantities for dmet (Gammapq & Ep)
 
-Reference:
+## Reference:
 
  Spin-Projected Matrix Product States: Versatile Tool for Strongly Correlated Systems
  
